@@ -18,7 +18,7 @@ urlpatterns = [
     # User management
     url(r'^users/', include('financialgraph.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
-
+    url(r'^intro/', include('graphs.urls')),
     # Your stuff: custom urls includes go here
 
 

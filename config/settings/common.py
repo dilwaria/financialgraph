@@ -39,12 +39,14 @@ THIRD_PARTY_APPS = (
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    # 'compressor',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     # custom users app
     'financialgraph.users.apps.UsersConfig',
+    'graphs',
     # Your stuff: custom apps go here
 )
 
@@ -102,9 +104,9 @@ DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'financial',
+        'NAME': 'finance',
         # 'PASSWORD': 'thakurani',
-        'PASSWORD': '',
+        'PASSWORD': '1234',
         'USER':  'root',
         'HOST': '127.0.0.1',
     }
