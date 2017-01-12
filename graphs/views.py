@@ -10,8 +10,10 @@ from openpyxl import load_workbook
 
 def introduction(request):
 	# openpyxl.load_workbook()
-	wb = load_workbook('D:\\financeproject\\financialgraph\\Book1.xlsx')
+	wb = load_workbook('Book1.xlsx')
 	ws1 = wb.get_sheet_by_name("Sheet1")
 	print ws1.cell(row=1, column=2).value 
 	print ws1.cell(row=1, column=3).value 
+
+	# for 
 	return render(request, 'graphs/introduction.html', {'poll': "p"})

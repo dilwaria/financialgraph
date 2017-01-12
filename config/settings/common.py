@@ -101,22 +101,22 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
-# DATABASES = {
-#     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'finance',
-#         # 'PASSWORD': 'thakurani',
-#         'PASSWORD': '1234',
-#         'USER':  'root',
-#         'HOST': '127.0.0.1',
-#     }
-# }
-# DATABASES['default']['ATOMIC_REQUESTS'] = True
+DATABASES = {
+    # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'finance',
+        # 'PASSWORD': 'thakurani',
+        'PASSWORD': '1234',
+        'USER':  'root',
+        'HOST': '127.0.0.1',
+    }
+}
+DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # GENERAL CONFIGURATION
