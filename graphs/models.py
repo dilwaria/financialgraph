@@ -20,43 +20,43 @@ class book1(models.Model):
 
 
 class book2(models.Model):
-    value1 = models.DecimalField(max_digits=5, decimal_places=5)
-    value2 = models.DecimalField(max_digits=5, decimal_places=5)
-    value3 = models.DecimalField(max_digits=5, decimal_places=5)
-    value4 = models.DecimalField(max_digits=5, decimal_places=5)
-    value5 = models.DecimalField(max_digits=5, decimal_places=5)
-    value6 = models.DecimalField(max_digits=5, decimal_places=5)
-    value7 = models.DecimalField(max_digits=5, decimal_places=5)
-    value8 =models.DecimalField(max_digits=5, decimal_places=5)
-    value9 = models.DecimalField(max_digits=5, decimal_places=5)
-    value10 = models.DecimalField(max_digits=5, decimal_places=5)
+    value1 = models.DecimalField(max_digits=7, decimal_places=7)
+    value2 = models.DecimalField(max_digits=7, decimal_places=7)
+    value3 = models.DecimalField(max_digits=7, decimal_places=7)
+    value4 = models.DecimalField(max_digits=7, decimal_places=7)
+    value5 = models.DecimalField(max_digits=7, decimal_places=7)
+    value6 = models.DecimalField(max_digits=7, decimal_places=7)
+    value7 = models.DecimalField(max_digits=7, decimal_places=7)
+    value8 =models.DecimalField(max_digits=7, decimal_places=7)
+    value9 = models.DecimalField(max_digits=7, decimal_places=7)
+    value10 = models.DecimalField(max_digits=7, decimal_places=7)
     
 
 class book3(models.Model):
-    value1 = models.DecimalField(max_digits=5, decimal_places=5)
-    value2 = models.DecimalField(max_digits=5, decimal_places=5)
-    value3 = models.DecimalField(max_digits=5, decimal_places=5)
-    value4 = models.DecimalField(max_digits=5, decimal_places=5)
-    value5 = models.DecimalField(max_digits=5, decimal_places=5)
-    value6 = models.DecimalField(max_digits=5, decimal_places=5)
-    value7 = models.DecimalField(max_digits=5, decimal_places=5)
-    value8 =models.DecimalField(max_digits=5, decimal_places=5)
-    value9 = models.DecimalField(max_digits=5, decimal_places=5)
-    value10 = models.DecimalField(max_digits=5, decimal_places=5)
+    value1 = models.DecimalField(max_digits=7, decimal_places=7)
+    value2 = models.DecimalField(max_digits=7, decimal_places=7)
+    value3 = models.DecimalField(max_digits=7, decimal_places=7)
+    value4 = models.DecimalField(max_digits=7, decimal_places=7)
+    value5 = models.DecimalField(max_digits=7, decimal_places=7)
+    value6 = models.DecimalField(max_digits=7, decimal_places=7)
+    value7 = models.DecimalField(max_digits=7, decimal_places=7)
+    value8 =models.DecimalField(max_digits=7, decimal_places=7)
+    value9 = models.DecimalField(max_digits=7, decimal_places=7)
+    value10 = models.DecimalField(max_digits=7, decimal_places=7)
     
 
 
 class book4(models.Model):
-    value1 = models.DecimalField(max_digits=5, decimal_places=5)
-    value2 = models.DecimalField(max_digits=5, decimal_places=5)
-    value3 = models.DecimalField(max_digits=5, decimal_places=5)
-    value4 = models.DecimalField(max_digits=5, decimal_places=5)
-    value5 = models.DecimalField(max_digits=5, decimal_places=5)
-    value6 = models.DecimalField(max_digits=5, decimal_places=5)
-    value7 = models.DecimalField(max_digits=5, decimal_places=5)
-    value8 =models.DecimalField(max_digits=5, decimal_places=5)
-    value9 = models.DecimalField(max_digits=5, decimal_places=5)
-    value10 = models.DecimalField(max_digits=5, decimal_places=5)
+    value1 = models.DecimalField(max_digits=7, decimal_places=7)
+    value2 = models.DecimalField(max_digits=7, decimal_places=7)
+    value3 = models.DecimalField(max_digits=7, decimal_places=7)
+    value4 = models.DecimalField(max_digits=7, decimal_places=7)
+    value5 = models.DecimalField(max_digits=7, decimal_places=7)
+    value6 = models.DecimalField(max_digits=7, decimal_places=7)
+    value7 = models.DecimalField(max_digits=7, decimal_places=7)
+    value8 =models.DecimalField(max_digits=7, decimal_places=7)
+    value9 = models.DecimalField(max_digits=7, decimal_places=7)
+    value10 = models.DecimalField(max_digits=7, decimal_places=7)
     
 
 

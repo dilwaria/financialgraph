@@ -7,14 +7,14 @@ from django.core.urlresolvers import reverse
 import openpyxl
 from openpyxl import Workbook
 from openpyxl import load_workbook
-from graphs.models import book1, book2
+from graphs.models import book1, book2, book3, book4
 from django.db.models import Max,Min,Sum
 import numpy 
 
 def introduction(request):
 	# openpyxl.load_workbook()							
 	wb = load_workbook('Book1.xlsx')
-	ws1 = wb.get_sheet_by_name("Sheet2")
+	ws1 = wb.get_sheet_by_name("Sheet4")
 	print ws1.cell(row=1, column=2).value 
 	print ws1.cell(row=1, column=3).value 
 
@@ -46,10 +46,15 @@ def introduction(request):
 					"minimum": d,
 					"sum":e,
 					"matrix": finalarray}
-	# for i in range(2,5002):
-		
-	# 	x = book2(value1=ws1.cell(row=i, column=2).value,value2=ws1.cell(row=i, column=3).value,value3=ws1.cell(row=i, column=4).value,value4=ws1.cell(row=i, column=5).value,value5=ws1.cell(row=i, column=6).value,value6=ws1.cell(row=i, column=7).value,value7=ws1.cell(row=i, column=8).value,value8=ws1.cell(row=i, column=9).value,value9=ws1.cell(row=i, column=10).value,value10=ws1.cell(row=i, column=11).value  )
-	# 	x.save()
-
+	
 
 	return render(request, 'graphs/introduction.html', GET_CONTEXT)
+
+
+
+def insertDataFunction():
+	for i in range(2,5002):
+		
+		x = book4(value1=ws1.cell(row=i, column=2).value,value2=ws1.cell(row=i, column=3).value,value3=ws1.cell(row=i, column=4).value,value4=ws1.cell(row=i, column=5).value,value5=ws1.cell(row=i, column=6).value,value6=ws1.cell(row=i, column=7).value,value7=ws1.cell(row=i, column=8).value,value8=ws1.cell(row=i, column=9).value,value9=ws1.cell(row=i, column=10).value,value10=ws1.cell(row=i, column=11).value  )
+		x.save()
+ 
