@@ -7,8 +7,18 @@ from . import views
 
 urlpatterns = [
     url(
+        regex=r'^introduction/(?P<variable_id>\d+)$',
+        view=views.introduction,
+        name='introduction'
+    ),
+    url(
         regex=r'^introduction/$',
         view=views.introduction,
         name='introduction'
+    ),
+    url(
+        regex=r'^graphing/$',
+        view=views.graphing,
+        name='graphing'
     ),
 ]

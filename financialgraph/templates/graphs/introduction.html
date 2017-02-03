@@ -90,6 +90,8 @@
       </tr>
     </thead>
     <tbody>
+<form method="POST" class="post-form">
+{% csrf_token %}
     <tr>
         <td>{{firstobs.value1}}</td>
         <td>{{lastobs.value1}}</td>
@@ -102,7 +104,7 @@
          <td>{{matrix.0}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value1" /></td>
       </tr>
       <tr>
         <td>{{firstobs.value2}}</td>
@@ -116,7 +118,7 @@
          <td>{{matrix.1}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value2" /></td>
       </tr>
       <tr>
          <td>{{firstobs.value3}}</td>
@@ -130,7 +132,7 @@
          <td>{{matrix.2}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value3" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value4}}</td>
@@ -144,7 +146,7 @@
          <td>{{matrix.3}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value4" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value5}}</td>
@@ -158,7 +160,7 @@
          <td>{{matrix.4}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value5" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value6}}</td>
@@ -172,7 +174,7 @@
          <td>{{matrix.5}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value6" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value7}}</td>
@@ -186,7 +188,7 @@
          <td>{{matrix.6}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value7" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value8}}</td>
@@ -200,7 +202,7 @@
          <td>{{matrix.7}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value8" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value9}}</td>
@@ -214,7 +216,7 @@
          <td>{{matrix.8}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value9" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value10}}</td>
@@ -228,11 +230,16 @@
          <td>{{matrix.9}}</td>
         <td></td>
          <td>John</td>
-        <td></td>
+        <td><input type="text" name="value10" /></td>
       </tr>
     </tbody>
+
+
   </table>
+  <input type="submit" value="Submit">
+  </form>
   </div>
   
 </div>
 {% endblock content %}
+
