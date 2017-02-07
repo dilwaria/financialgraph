@@ -1,9 +1,10 @@
+{% load staticfiles i18n compress%}
 <html>
     
   <head>
 
     <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="{% static 'js/gloader.js' %}"></script>
     <script type="text/javascript">
 
       // Load the Visualization API and the corechart package.
@@ -22,30 +23,30 @@
         data.addColumn('string', 'Observation');
         data.addColumn('number', 'Value');
         data.addRows([
-          ['Obs1', 3],
-          ['Obs2', 1],
-          ['Obs3', 1],
-          ['Obs4', 1],
-          ['Obs5', 2],
-          ['Obs6', 3],
-          ['Obs7', 1],
-          ['Obs8', 1],
-          ['Obs9', 1],
-          ['Obs10', 2]
+          ['Obs1', {{firstobs.value1}}],
+          ['Obs2', {{firstobs.value2}}],
+          ['Obs3', {{firstobs.value3}}],
+          ['Obs4', {{firstobs.value4}}],
+          ['Obs5', {{firstobs.value5}}],
+          ['Obs6', {{firstobs.value6}}],
+          ['Obs7', {{firstobs.value7}}],
+          ['Obs8', {{firstobs.value8}}],
+          ['Obs9', {{firstobs.value9}}],
+          ['Obs10', {{firstobs.value10}}]
         ]);
 
          var areadata = google.visualization.arrayToDataTable([
           ['Value', 'Var1', 'Var2'],
-          ['Obs1',  1000,      400],
-          ['Obs2',  1170,      460],
-          ['Obs3',  660,       1120],
-          ['Obs4',  1030,      540],
-          ['Obs5',  1000,      400],
-          ['Obs6',  1170,      460],
-          ['Obs7',  660,       1120],
-          ['Obs8',  1030,      540],
-          ['Obs9',  1000,      400],
-          ['Obs10',  1170,      460]
+          ['Obs1',  {{firstobs.value1}},      {{lastobs.value1}}],
+          ['Obs2',  {{firstobs.value2}},      {{lastobs.value2}}],
+          ['Obs3',  {{firstobs.value3}},      {{lastobs.value3}}],
+          ['Obs4',  {{firstobs.value4}},      {{lastobs.value4}}],
+          ['Obs5', {{firstobs.value5}},      {{lastobs.value5}}],
+          ['Obs6',  {{firstobs.value6}},      {{lastobs.value6}}],
+          ['Obs7',  {{firstobs.value7}},      {{lastobs.value7}}],
+          ['Obs8',  {{firstobs.value8}},      {{lastobs.value8}}],
+          ['Obs9',  {{firstobs.value9}},      {{lastobs.value9}}],
+          ['Obs10',  {{firstobs.value10}},      {{lastobs.value10}}]
           
         ]);
 
@@ -64,10 +65,14 @@
                          role: "annotation" },
                        2]);
 
+
+   
         // Set chart options
         var piechart_options = {'title':'Value of Last Observation',
                        'width':400,
-                       'height':300};
+                       'height':300,
+                        'titleTextStyle':{color: '#F8F0EE'},
+                        'backgroundColor': '#403B3A',};
 
         var barchart_options = {'title':'Value of First Observation',
                        'width':400,
@@ -75,17 +80,25 @@
 
         var areachart_options = {
           title: 'Observation With Variables',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          hAxis: {title: 'Observations',  titleTextStyle: {color: '#333'}},
+        //   width: 400,
+        // height: 300,
           vAxis: {minValue: 0}
         };
 
         var histogram_options = {
         title: "Variables with First Observation",
-        width: 600,
-        height: 400,
+        width: 400,
+        height: 300,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
+
+       var steppedchart_options = {
+          title: 'The decline of \'The 39 Steps\'',
+          vAxis: {title: 'Accumulated Rating'},
+          isStacked: true
+        };
 
         // Instantiate and draw our chart, passing in some options.
         var piechart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -99,6 +112,11 @@
 
         var histogramchart = new google.visualization.ColumnChart(document.getElementById("chart_div3"));
        histogramchart.draw(view, histogram_options);
+
+       var steppedchart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div4'));
+       steppedchart.draw(areadata, steppedchart_options);
+
+
       }
     </script>
 
@@ -106,10 +124,11 @@
 
   <body>
     <!--Div that will hold the pie chart-->
-    <div id="chart_div" style=" width: 50%; height: 50%; float: left;" ></div>
-    <div id ="chart_div1" style=" width: 50%; height: 50%; float: left;"></div>
-    <div id ="chart_div2" style=" width: 50%; height: 50%; float: left;"></div>
-    <div id ="chart_div3" style=" width: 50%; height: 50%; float: left;"></div>
+    <div id="chart_div" style=" width: 50%;  float: left;" ></div>
+    <div id ="chart_div1" style=" width: 50%;  float: left;"></div>
+    <div id ="chart_div2" style=" width: 50%; height:50%;  float: left;"></div>
+    <div id ="chart_div3" style=" width: 50%;  float: left; "></div>
+    <div id ="chart_div4" style=" width: 50%;   height:50%; float: right; "></div>
   </body>
 
 </html>

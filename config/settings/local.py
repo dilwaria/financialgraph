@@ -39,10 +39,16 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
 # ------------------------------------------------------------------------------
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': ''
+        'BACKEND':'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION':'127.0.0.1:11211',
     }
 }
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+#         'LOCATION': ''
+#     }
+# }
 
 # django-debug-toolbar
 # ------------------------------------------------------------------------------

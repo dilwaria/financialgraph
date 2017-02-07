@@ -63,7 +63,7 @@
       </tr>
       <tr>
       <th>
-<select     >
+<select id='list'>
   <option value="var-a">VAR_A</option>
   <option value="var-b">VAR_B</option>
   <option value="var-c">VAR_C</option>
@@ -73,7 +73,30 @@
 
 </select>
 </th>
-      </tr>
+</tr>
+<tr>
+ <th>
+<select id="numberlargest">
+{% for i in loop %}
+
+  <option value="var-{{i}}">{{i}} number</option>
+ 
+{% endfor %}
+</select>
+</th>
+<th>largest</th>
+</tr>
+
+<tr>
+ <th>
+<select id="numbersmallest">
+{% for i in loop %}
+  <option value="var-{{i}}">{{i}} number</option>
+{% endfor %}
+</select>
+</th>
+<th>smallest</th>
+</tr>
       <tr>
         <th>FirstObs</th>
         <th>LastObs</th>
@@ -96,141 +119,141 @@
         <td>{{firstobs.value1}}</td>
         <td>{{lastobs.value1}}</td>
          <td>{{maximum.value1__max}}</td>
-        <td></td>
+        <td>{{largests.0.value1}}</td>
          <td>{{minimum.value1__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value1}}</td>
          <td>{{sum.value1__sum}}</td>
         <td></td>
          <td>{{matrix.0}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value1" /></td>
+        <td ><input type="text" name="value1"  style="width: 75px;" /></td>
       </tr>
       <tr>
         <td>{{firstobs.value2}}</td>
        <td>{{lastobs.value2}}</td>
          <td>{{maximum.value2__max}}</td>
-        <td></td>
+        <td>{{largests.0.value2}}</td>
          <td>{{minimum.value2__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value2}}</td>
          <td>{{sum.value2__sum}}</td>
         <td></td>
          <td>{{matrix.1}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value2" /></td>
+        <td><input type="text" name="value2" style="width: 75px;" /></td>
       </tr>
       <tr>
          <td>{{firstobs.value3}}</td>
        <td>{{lastobs.value3}}</td>
          <td>{{maximum.value3__max}}</td>
-        <td></td>
+        <td>{{largests.0.value3}}</td>
          <td>{{minimum.value3__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value3}}</td>
          <td>{{sum.value3__sum}}</td>
         <td></td>
          <td>{{matrix.2}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value3" /></td>
+        <td><input type="text" name="value3" style="width: 75px;" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value4}}</td>
         <td>{{lastobs.value4}}</td>
          <td>{{maximum.value4__max}}</td>
-        <td></td>
+        <td>{{largests.0.value4}}</td>
          <td>{{minimum.value4__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value4}}</td>
          <td>{{sum.value4__sum}}</td>
         <td></td>
          <td>{{matrix.3}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value4" /></td>
+        <td><input type="text" name="value4" style="width: 75px;" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value5}}</td>
         <td>{{lastobs.value5}}</td>
          <td>{{maximum.value5__max}}</td>
-        <td></td>
+        <td>{{largests.0.value5}}</td>
          <td>{{minimum.value5__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value5}}</td>
          <td>{{sum.value5__sum}}</td>
         <td></td>
          <td>{{matrix.4}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value5" /></td>
+        <td><input type="text" name="value5" style="width: 75px;"/></td>
       </tr>
        <tr>
          <td>{{firstobs.value6}}</td>
         <td>{{lastobs.value6}}</td>
          <td>{{maximum.value6__max}}</td>
-        <td></td>
+        <td>{{largests.0.value6}}</td>
          <td>{{minimum.value6__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value6}}</td>
          <td>{{sum.value6__sum}}</td>
         <td></td>
          <td>{{matrix.5}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value6" /></td>
+        <td><input type="text" name="value6" style="width: 75px;" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value7}}</td>
         <td>{{lastobs.value7}}</td>
          <td>{{maximum.value7__max}}</td>
-        <td></td>
+        <td>{{largests.0.value7}}</td>
          <td>{{minimum.value7__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value7}}</td>
          <td>{{sum.value7__sum}}</td>
         <td></td>
          <td>{{matrix.6}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value7" /></td>
+        <td><input type="text" name="value7" style="width: 75px;"/></td>
       </tr>
        <tr>
          <td>{{firstobs.value8}}</td>
        <td>{{lastobs.value8}}</td>
          <td>{{maximum.value8__max}}</td>
-        <td></td>
+        <td>{{largests.0.value8}}</td>
          <td>{{minimum.value8__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value8}}</td>
          <td>{{sum.value8__sum}}</td>
         <td></td>
          <td>{{matrix.7}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value8" /></td>
+        <td><input type="text" name="value8" style="width: 75px;" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value9}}</td>
         <td>{{lastobs.value9}}</td>
          <td>{{maximum.value9__max}}</td>
-        <td></td>
+        <td>{{largests.0.value9}}</td>
          <td>{{minimum.value9__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value9}}</td>
          <td>{{sum.value9__sum}}</td>
         <td></td>
          <td>{{matrix.8}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value9" /></td>
+        <td><input type="text" name="value9" style="width: 75px;" /></td>
       </tr>
        <tr>
          <td>{{firstobs.value10}}</td>
         <td>{{lastobs.value10}}</td>
          <td>{{maximum.value10__max}}</td>
-        <td></td>
+        <td>{{largests.0.value10}}</td>
          <td>{{minimum.value10__min}}</td>
-        <td></td>
+        <td>{{smallests.0.value10}}</td>
          <td>{{sum.value10__sum}}</td>
         <td></td>
          <td>{{matrix.9}}</td>
         <td></td>
          <td>John</td>
-        <td><input type="text" name="value10" /></td>
+        <td><input type="text" name="value10" style="width: 75px;" /></td>
       </tr>
     </tbody>
 
@@ -243,3 +266,100 @@
 </div>
 {% endblock content %}
 
+
+    {% block javascript %}
+    {{block.super}}
+    <script type="text/javascript">
+    $('#list').change(function() {
+    switch ($(this).val()) {
+    case "var-a":
+        window.location = "{% url 'introduction' 2 %}";
+        break; 
+    case "var-b":
+        window.location = "{% url 'introduction' 2 %}";
+        break; 
+    case "var-c":
+        window.location = "{% url 'introduction' 3 %}";
+        break; 
+    case "var-d":
+        window.location = "{% url 'introduction' 4 %}";
+        break; 
+    default: 
+        alert("Looking forward to the Weekend");
+}
+});
+
+     $('#numberlargest').change(function() {
+     str = $(this).val(); 
+        var res = str.split("-");
+        going = res[1];
+        var currentLocation = window.location;
+ 
+        variables = currentLocation['pathname'].split("/");
+
+        var id =  variables.slice(-1)[0] ;
+        if (id==""){
+           id =1 ;
+        }
+        // console.log(id)
+        // "{% url 'ajaxfire' 1 1 3 %}";
+        $.ajax({
+        url: "{% url 'ajaxfire' 1 1 3 %}",
+        data: {
+              format: 'json',
+              variable : id,
+              number : going
+              },
+        type: 'GET',
+        error: function() {
+      $('#info').html('<p>An error has occurred</p>');
+          },
+   // dataType: 'jsonp',
+   success: function(data) {
+    console.log(JSON.stringify(data));
+    for (i = 0 ; i< data.length; i++){
+     console.log(data['fields'])
+    }
+   }
+   
+});
+      
+    });
+
+    $('#numbersmallest').change(function() {
+       str = $(this).val(); 
+        var res = str.split("-");
+        going = res[1];
+        var currentLocation = window.location;
+ 
+        variables = currentLocation['pathname'].split("/");
+
+        var id =  variables.slice(-1)[0] ;
+        if (id==""){
+           id =1 ;
+        }
+        // console.log(id)
+        // "{% url 'ajaxfire' 1 1 3 %}";
+        $.ajax({
+        url: "{% url 'ajaxfire' 1 2 3 %}",
+        data: {
+              format: 'json',
+              variable : id,
+              number : going
+              },
+        type: 'GET',
+        error: function() {
+      $('#info').html('<p>An error has occurred</p>');
+          },
+   // dataType: 'jsonp',
+   success: function(data) {
+     console.log(data)
+   }
+      });  
+    });
+
+
+    </script>
+
+
+    {% endblock javascript %}
