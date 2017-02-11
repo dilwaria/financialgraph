@@ -15,11 +15,10 @@
 
 <body> -->
 {% block content%}
-<section style="padding-top:50px;padding-bottom:50px;">
-  </section>
+
   <nav class="navbar navbar-inverse" >
     <div class="container">
-    
+
       <div class="collapse navbar-collapse" id="collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#featured">Home</a></li>
@@ -34,10 +33,10 @@
   
   
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding-left: 0px;padding-right: 95px;">
   <div class="col-md-10 table-responsive">
   
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped table-bordered" style="padding: .5rem;">
       <thead>
        <tr>
         <th colspan="2" scope="colgroup">EMPLOY</th>
@@ -64,51 +63,44 @@
       <tr>
       <th>
 <select id='list'>
-  <option value="var-a">VAR_A</option>
-  <option value="var-b">VAR_B</option>
-  <option value="var-c">VAR_C</option>
-  <option value="var-d">VAR_D</option>
-   <option value="var-e">VAR_E</option>
-  <option value="var-f">VAR_F</option>
+  <option value="var-a">TYPE_A</option>
+  <option value="var-b">TYPE_B</option>
+  <option value="var-c">TYPE_C</option>
+  <option value="var-d">TYPE_D</option>
+   <option value="var-e">TYPE_E</option>
+  <option value="var-f">TYPE_F</option>
 
 </select>
 </th>
 </tr>
-<tr>
- <th>
+
+      <tr>
+        <th></th>
+        <th>FirstObs</th>
+        <th>LastObs</th>
+        <th>Largest</th>
+          <th>
 <select id="numberlargest">
 {% for i in loop %}
-
-  <option value="var-{{i}}">{{i}} number</option>
+  <option value="var-{{i}}">{{i}} Largest</option>
  
 {% endfor %}
 </select>
 </th>
-<th>largest</th>
-</tr>
-
-<tr>
- <th>
+        <th>Smallest</th>
+         <th>
 <select id="numbersmallest">
 {% for i in loop %}
-  <option value="var-{{i}}">{{i}} number</option>
+  <option value="var-{{i}}">{{i}} Smallest</option>
 {% endfor %}
 </select>
 </th>
-<th>smallest</th>
-</tr>
-      <tr>
-        <th>FirstObs</th>
-        <th>LastObs</th>
-        <th>Largest</th>
-         <th>N-largest</th>
-        <th>Smallest</th>
-        <th>N-Smallest</th>
+
          <th>Sum</th>
         <th>Test</th>
         <th>MatrixAdd</th>
          <th>Select-1</th>
-        <th>CompInt</th>
+        <!-- <th>CompInt</th> -->
         <th>UserInput</th>
       </tr>
     </thead>
@@ -116,150 +108,160 @@
 <form method="POST" class="post-form">
 {% csrf_token %}
     <tr>
+      <td>Var-1</td>
         <td>{{firstobs.value1}}</td>
         <td>{{lastobs.value1}}</td>
          <td>{{maximum.value1__max}}</td>
-        <td>{{largests.0.value1}}</td>
+        <td id ="lar-1">{{largests.0.value1}}</td>
          <td>{{minimum.value1__min}}</td>
-        <td>{{smallests.0.value1}}</td>
+        <td id="small-1">{{smallests.0.value1}}</td>
          <td>{{sum.value1__sum}}</td>
         <td></td>
          <td>{{matrix.0}}</td>
         <td></td>
-         <td>John</td>
+         
         <td ><input type="text" name="value1"  style="width: 75px;" /></td>
       </tr>
       <tr>
+      <td>Var-2</td>
         <td>{{firstobs.value2}}</td>
        <td>{{lastobs.value2}}</td>
          <td>{{maximum.value2__max}}</td>
-        <td>{{largests.0.value2}}</td>
+        <td  id ="lar-2">{{largests.0.value2}}</td>
          <td>{{minimum.value2__min}}</td>
-        <td>{{smallests.0.value2}}</td>
+        <td id="small-2">{{smallests.0.value2}}</td>
          <td>{{sum.value2__sum}}</td>
         <td></td>
          <td>{{matrix.1}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value2" style="width: 75px;" /></td>
       </tr>
       <tr>
+       <td>Var-3</td>
          <td>{{firstobs.value3}}</td>
        <td>{{lastobs.value3}}</td>
          <td>{{maximum.value3__max}}</td>
-        <td>{{largests.0.value3}}</td>
+        <td   id ="lar-3" >{{largests.0.value3}}</td>
          <td>{{minimum.value3__min}}</td>
-        <td>{{smallests.0.value3}}</td>
+        <td id="small-3">{{smallests.0.value3}}</td>
          <td>{{sum.value3__sum}}</td>
         <td></td>
          <td>{{matrix.2}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value3" style="width: 75px;" /></td>
       </tr>
        <tr>
+        <td>Var-4</td>
          <td>{{firstobs.value4}}</td>
         <td>{{lastobs.value4}}</td>
          <td>{{maximum.value4__max}}</td>
-        <td>{{largests.0.value4}}</td>
+        <td  id ="lar-4">{{largests.0.value4}}</td>
          <td>{{minimum.value4__min}}</td>
-        <td>{{smallests.0.value4}}</td>
+        <td id="small-4">{{smallests.0.value4}}</td>
          <td>{{sum.value4__sum}}</td>
         <td></td>
          <td>{{matrix.3}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value4" style="width: 75px;" /></td>
       </tr>
        <tr>
+        <td>Var-5</td>
          <td>{{firstobs.value5}}</td>
         <td>{{lastobs.value5}}</td>
          <td>{{maximum.value5__max}}</td>
-        <td>{{largests.0.value5}}</td>
+        <td  id ="lar-5">{{largests.0.value5}}</td>
          <td>{{minimum.value5__min}}</td>
-        <td>{{smallests.0.value5}}</td>
+        <td id="small-5" >{{smallests.0.value5}}</td>
          <td>{{sum.value5__sum}}</td>
         <td></td>
          <td>{{matrix.4}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value5" style="width: 75px;"/></td>
       </tr>
        <tr>
+        <td>Var-6</td>
          <td>{{firstobs.value6}}</td>
         <td>{{lastobs.value6}}</td>
          <td>{{maximum.value6__max}}</td>
-        <td>{{largests.0.value6}}</td>
+        <td  id ="lar-6">{{largests.0.value6}}</td>
          <td>{{minimum.value6__min}}</td>
-        <td>{{smallests.0.value6}}</td>
+        <td id="small-6">{{smallests.0.value6}}</td>
          <td>{{sum.value6__sum}}</td>
         <td></td>
          <td>{{matrix.5}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value6" style="width: 75px;" /></td>
       </tr>
        <tr>
+        <td>Var-7</td>
          <td>{{firstobs.value7}}</td>
         <td>{{lastobs.value7}}</td>
          <td>{{maximum.value7__max}}</td>
-        <td>{{largests.0.value7}}</td>
+        <td  id ="lar-7">{{largests.0.value7}}</td>
          <td>{{minimum.value7__min}}</td>
-        <td>{{smallests.0.value7}}</td>
+        <td id="small-7">{{smallests.0.value7}}</td>
          <td>{{sum.value7__sum}}</td>
         <td></td>
          <td>{{matrix.6}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value7" style="width: 75px;"/></td>
       </tr>
        <tr>
+        <td>Var-8</td>
          <td>{{firstobs.value8}}</td>
        <td>{{lastobs.value8}}</td>
          <td>{{maximum.value8__max}}</td>
-        <td>{{largests.0.value8}}</td>
+        <td  id ="lar-8">{{largests.0.value8}}</td>
          <td>{{minimum.value8__min}}</td>
-        <td>{{smallests.0.value8}}</td>
+        <td id="small-8">{{smallests.0.value8}}</td>
          <td>{{sum.value8__sum}}</td>
         <td></td>
          <td>{{matrix.7}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value8" style="width: 75px;" /></td>
       </tr>
        <tr>
+        <td>Var-9</td>
          <td>{{firstobs.value9}}</td>
         <td>{{lastobs.value9}}</td>
          <td>{{maximum.value9__max}}</td>
-        <td>{{largests.0.value9}}</td>
+        <td  id ="lar-9">{{largests.0.value9}}</td>
          <td>{{minimum.value9__min}}</td>
-        <td>{{smallests.0.value9}}</td>
+        <td id="small-9" >{{smallests.0.value9}}</td>
          <td>{{sum.value9__sum}}</td>
         <td></td>
          <td>{{matrix.8}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value9" style="width: 75px;" /></td>
       </tr>
        <tr>
+          <td>Var-10</td>
          <td>{{firstobs.value10}}</td>
         <td>{{lastobs.value10}}</td>
          <td>{{maximum.value10__max}}</td>
-        <td>{{largests.0.value10}}</td>
+        <td  id ="lar-10">{{largests.0.value10}}</td>
          <td>{{minimum.value10__min}}</td>
-        <td>{{smallests.0.value10}}</td>
+        <td id="small-10">{{smallests.0.value10}}</td>
          <td>{{sum.value10__sum}}</td>
         <td></td>
          <td>{{matrix.9}}</td>
         <td></td>
-         <td>John</td>
+         
         <td><input type="text" name="value10" style="width: 75px;" /></td>
       </tr>
     </tbody>
 
 
   </table>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" id="yelo">
   </form>
   </div>
   
@@ -316,15 +318,19 @@
           },
    // dataType: 'jsonp',
    success: function(data) {
-    console.log(JSON.stringify(data));
-    for (i = 0 ; i< data.length; i++){
-     console.log(data['fields'])
+    // console.log(JSON.stringify(data));
+    var obj = JSON.parse(data);
+    for (i = 0 ; i< 10; i++){
+      var put = "lar-"+ (i+1).toString();
+      var values = "value" + (i+1).toString();
+      // console.log(put);
+      $('#'+put).text(obj[0]['fields'][values]);
+     // console.log(obj[0]['fields']['value1']);
     }
    }
    
 });
-      
-    });
+});
 
     $('#numbersmallest').change(function() {
        str = $(this).val(); 
@@ -353,8 +359,14 @@
           },
    // dataType: 'jsonp',
    success: function(data) {
-     console.log(data)
-   }
+     var obj = JSON.parse(data);
+    for (i = 0 ; i< 10; i++){
+      var put = "small-"+ (i+1).toString();
+      var values = "value" + (i+1).toString();
+      // console.log(put);
+      $('#'+put).text(obj[0]['fields'][values]);
+     // console.log(obj[0]['fields']['value1']);
+    }   }
       });  
     });
 

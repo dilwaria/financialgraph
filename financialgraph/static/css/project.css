@@ -36,3 +36,9 @@
 [hidden][style="display: block;"] {
   display: block !important;
 }
+
+#yelo {
+    position: relative;
+    padding-left: 4px;
+    margin-left: 1058px;
+}

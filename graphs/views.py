@@ -25,9 +25,9 @@ def introduction(request,variable_id=1):
 	# print workBookBySheet.cell(row=1, column=2).value 
 	# print workBookBySheet.cell(row=1, column=3).value
 	# print ws1.cell(row=2,column=2).value
-	for i in range(2,5002):
-		x = book4(value1=ws1.cell(row=i, column=2).value,value2=ws1.cell(row=i, column=3).value,value3=ws1.cell(row=i, column=4).value,value4=ws1.cell(row=i, column=5).value,value5=ws1.cell(row=i, column=6).value,value6=ws1.cell(row=i, column=7).value,value7=ws1.cell(row=i, column=8).value,value8=ws1.cell(row=i, column=9).value,value9=ws1.cell(row=i, column=10).value,value10=ws1.cell(row=i, column=11).value  )
-		x.save()
+	# for i in range(2,5002):
+	# 	x = book4(value1=ws1.cell(row=i, column=2).value,value2=ws1.cell(row=i, column=3).value,value3=ws1.cell(row=i, column=4).value,value4=ws1.cell(row=i, column=5).value,value5=ws1.cell(row=i, column=6).value,value6=ws1.cell(row=i, column=7).value,value7=ws1.cell(row=i, column=8).value,value8=ws1.cell(row=i, column=9).value,value9=ws1.cell(row=i, column=10).value,value10=ws1.cell(row=i, column=11).value  )
+	# 	x.save()
 		
 	print variable_id
 	if variable_id=="1": 
