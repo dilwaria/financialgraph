@@ -56,14 +56,18 @@ def introduction(request,variable_id=1):
 	largests = []
 	smallests = []
 	for i in range(1,11):
-		target = "value"+str(i)
-		targetdesc = "-value"+str(i)
-		nlargest = book.objects.all().order_by(target)[1]
-		nsmallest = book.objects.all().order_by(targetdesc)[1]
+		target = "-value"+str(i)
+		targetdesc = "value"+str(i)
+		nlargest = book.objects.all().order_by(target)[0]
+		nsmallest = book.objects.all().order_by(targetdesc)[0]
 		largests.append(nlargest)
 		smallests.append(nsmallest)
 
-	print largests[0].value1
+
+	for i in range(0,10):
+		# targetdesc = "value"+str(i)
+		print smallests[i].value1
+
 	print smallests[0].value1
 	# nsmallest = 
 
@@ -149,7 +153,8 @@ def ajaxfire(request,variable_id,order,number):
 	# smallests = []
 	for i in range(1,11):
 		target = "value"+str(i)
-		nlargest = book.objects.all().order_by(target)[1]
+		nlargest = book.objects.all().order_by(target)[0]
+		print nlargest
 		# nsmallest = book.objects.all().order_by(target)[1]
 		largests.append(nlargest)
 		# smallests.append(nsmallest)
