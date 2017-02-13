@@ -267,7 +267,20 @@
   
 </div>
 {% endblock content %}
+ {% block graph %}
+  <div id="chart_div" style="   float: left;  margin-left: 65px;
+    margin-right: 173px;
+    margin-top: 40px;" ></div>
+    <div id ="chart_div1" style="  float: left; margin-top: 40px;
+    margin-right: 4px;
+    margin-left: 0px;
+    margin-bottom: 65px;"></div>
 
+     <div id ="chart_div3" style="   float: left; margin-left: 65px; margin-right: 173px;"></div>
+    <div id ="chart_div2" style=" height:50%;  float: left; margin-bottom: 100px;"></div>
+   
+    <!-- <div id ="chart_div4" style=" width: 50%;   height:50%; float: right; "></div> -->
+    {% endblock graph%}
 
     {% block javascript %}
     {{block.super}}
@@ -378,6 +391,128 @@
     });
 
 
+    </script>
+<script type="text/javascript" src="{% static 'js/gloader.js' %}"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Observation');
+        data.addColumn('number', 'Value');
+        data.addRows([
+          ['Obs1', {{firstobs.value1}}],
+          ['Obs2', {{firstobs.value2}}],
+          ['Obs3', {{firstobs.value3}}],
+          ['Obs4', {{firstobs.value4}}],
+          ['Obs5', {{firstobs.value5}}],
+          ['Obs6', {{firstobs.value6}}],
+          ['Obs7', {{firstobs.value7}}],
+          ['Obs8', {{firstobs.value8}}],
+          ['Obs9', {{firstobs.value9}}],
+          ['Obs10', {{firstobs.value10}}]
+        ]);
+
+         var areadata = google.visualization.arrayToDataTable([
+          ['Value', 'Var1', 'Var2'],
+          ['Obs1',  {{firstobs.value1}},      {{lastobs.value1}}],
+          ['Obs2',  {{firstobs.value2}},      {{lastobs.value2}}],
+          ['Obs3',  {{firstobs.value3}},      {{lastobs.value3}}],
+          ['Obs4',  {{firstobs.value4}},      {{lastobs.value4}}],
+          ['Obs5', {{firstobs.value5}},      {{lastobs.value5}}],
+          ['Obs6',  {{firstobs.value6}},      {{lastobs.value6}}],
+          ['Obs7',  {{firstobs.value7}},      {{lastobs.value7}}],
+          ['Obs8',  {{firstobs.value8}},      {{lastobs.value8}}],
+          ['Obs9',  {{firstobs.value9}},      {{lastobs.value9}}],
+          ['Obs10',  {{firstobs.value10}},      {{lastobs.value10}}]
+          
+        ]);
+
+        var columndata = google.visualization.arrayToDataTable([
+        ["Element", "Value", { role: "style" } ],
+        ["Var1", {{firstobs.value1}}, "#b87333"],
+        ["Var2",  {{firstobs.value2}} , "silver"],
+        ["Var3", {{firstobs.value3}}, "gold"],
+        ["Var4", {{firstobs.value4}}, "color: #e5e4e2"],
+         ["Var5", {{firstobs.value5}}, "silver"]
+      ]);
+       var view = new google.visualization.DataView(columndata);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+
+   
+        // Set chart options
+        var piechart_options = {'title':'Value of Last Observation',
+                       'width':450,
+                       'height':350,
+                        'titleTextStyle':{color: '#F8F0EE'},
+                        'backgroundColor': '#3a3737',};
+
+        var barchart_options = {'title':'Value of First Observation',
+                       'width':450,
+                       'height':350,
+                       'titleTextStyle':{color: '#F8F0EE'},
+                        'backgroundColor': '#3a3737',};
+
+        var areachart_options = {
+          title: 'Observation With Variables',
+          hAxis: {title: 'Observations',  titleTextStyle: {color: '#F8F0EE'}},
+          width: 450,
+        height: 350,
+        'titleTextStyle':{color: '#F8F0EE'},
+        backgroundColor: '#3a3737',
+          vAxis: {minValue: 0}
+        };
+
+        var histogram_options = {
+        title: "Variables with First Observation",
+        width: 450,
+        height: 350,
+        backgroundColor: '#3a3737',
+        'titleTextStyle':{color: '#F8F0EE'},
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+
+       var steppedchart_options = {
+          title: 'The decline of \'The 39 Steps\'',
+          vAxis: {title: 'Accumulated Rating'},
+          isStacked: true
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var piechart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        piechart.draw(data, piechart_options);
+      
+        var barchart = new google.visualization.BarChart(document.getElementById('chart_div1'));
+        barchart.draw(data, barchart_options);
+
+        var areachart = new google.visualization.AreaChart(document.getElementById('chart_div2'));
+        areachart.draw(areadata, areachart_options);
+
+        var histogramchart = new google.visualization.ColumnChart(document.getElementById("chart_div3"));
+       histogramchart.draw(view, histogram_options);
+
+       var steppedchart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div4'));
+       steppedchart.draw(areadata, steppedchart_options);
+
+
+      }
     </script>
 
 
