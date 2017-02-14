@@ -151,14 +151,14 @@ def ajaxfire(request,variable_id,order,number):
 	elif order ==2 :
 		target = "-value"+str(i)
 	# smallests = []
+	numb = int(number)
 	for i in range(1,11):
 		target = "value"+str(i)
-		nlargest = book.objects.all().order_by(target)[0]
-		print nlargest
-		# nsmallest = book.objects.all().order_by(target)[1]
+		# print target
+		nlargest = book.objects.all().order_by(target)[numb]
 		largests.append(nlargest)
 		# smallests.append(nsmallest)
-	
+	# print largests
 	dataserialized  = serializers.serialize("json", largests)
 	
 	
