@@ -1,0 +1,566 @@
+{% extends "base.html" %}
+{% load staticfiles i18n compress%}
+
+{% block css %}
+
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+ 
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static  'css/animate.css' %}">
+   <link rel="stylesheet" href="{% static  'css/font-awesome.css' %}">
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+ {% endblock %}
+
+
+<!-- <title>Table</title>
+
+
+</head>
+
+<body> -->
+{% block content%}
+
+
+<section class=" container-fluid">
+
+<div class="data-table" style=" ">
+ <ul class="nav nav-tabs">
+    <li class="active" style="width:16.66%"><a data-toggle="tab" href="#1">EMPLOY</a></li>
+    <li style="width:16.66%"><a data-toggle="tab" href="#2">DEPLOY</a></li>
+	<li style="width:16.66%"><a data-toggle="tab" href="#3">LABOUR</a></li>
+	<li style="width:16.66%"><a data-toggle="tab" href="#4">APPOINT</a></li>
+	<li style="width:16.66%"><a data-toggle="tab" href="#5">UTILIZE</a></li>
+	<li style="width:16.66%"><a data-toggle="tab" href="#6">SECURE</a></li>
+  </ul>
+<div class="tab-content">
+<div id="1" class="tab-pane fade in active data">
+ <ul class="nav nav-pills " style="width:100%;">
+    <li class="active " style="width:8.33%;" type="li"><a data-toggle="tab" href="#11">EMPLOY 1</a></li>
+    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#12">EMPLOY 2</a></li>
+    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#13">EMPLOY 3</a></li>
+    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#14">EMPLOY 4</a></li>
+	    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#15">EMPLOY 5</a></li>
+    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#16">EMPLOY 6</a></li>
+    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#17">EMPLOY 7</a></li>
+	    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#18">EMPLOY 8</a></li>
+    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#19">EMPLOY 9</a></li>
+    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#20">EMPLOY 10</a></li>
+	    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#21">EMPLOY 11</a></li>
+    <li class="" style="width:8.33%;" type="li"><a data-toggle="tab" href="#22">EMPLOY 12</a></li>
+  </ul>
+  
+<div class="tab-content">
+    <div id="11" class="tab-pane fade in active" style="">
+
+
+
+
+
+
+<div class="container-fluid" style="margin-top:5px;">
+	
+	<div class="col-md-3 form-group" style="margin-bottom:5px;">
+	
+		<div class="col-md-5"><p style="color:#fff;float:right;">Default</p></div>
+		<div class="col-md-7"><input type='checkbox' name='checkbox3'  /></div>
+	</div>
+	<div class="col-md-3 form-group" style="margin-bottom:5px;">
+	        <div class="col-md-5"><p style="color:#fff;float:right;">Select A to F</p></div>
+		<div class="col-md-7"><select class="form-control" id= "list">
+			<option>A</option>
+			<option>B</option>
+			<option>C</option>
+			<option>D</option>
+			<option>E</option>
+			<option>F</option>
+		</select></div>
+	</div>
+	<div class="col-md-3 form-group" style="margin-bottom:5px;">
+	       <div class="col-md-5"> <p style="color:#fff;float:right;">Initial</p></div>
+		<div class="col-md-7"><select class="form-control">
+			<option>20</option>
+			<option>25</option>
+			<option>30</option>
+			<option>35</option>
+			<option>40</option>
+			<option>45</option>
+		</select></div>
+	</div>
+	<div class="col-md-3 form-group" style="margin-bottom:5px;">
+	        <div class="col-md-5"><p style="color:#fff;float:right;">Complete</p></div>
+		<div class="col-md-7"><select class="form-control">
+			<option>20</option>
+			<option>25</option>
+			<option>30</option>
+			<option>35</option>
+			<option>40</option>
+			<option>45</option>
+		</select></div>
+	</div>
+</div>
+
+
+<table class="table table-sm table-inverse table-striped table-bordered col-md-9 text-center" style="width:70%;padding-left:0px;padding-right:0px;">
+	  
+  <thead>
+ 
+		 
+		
+    <tr>
+      <th>#</th>
+      <th>First Obs</th>
+      <th>Last Obs</th>
+      <th>Largest</th>
+	   <th> 
+	   	<select class="form-control" id="numberlargest" >
+			<option disabled="" selected="">n Largest</option>
+			<!-- <select id="numberlargest"> -->
+{% for i in loop %}
+  <option value="var-{{i}}">{{i}}</option>
+{% endfor %}
+</select>
+		</select>
+	   </th>
+      <th>Smallest</th>
+      <th>
+      	<select class="form-control"  id="numbersmallest">
+			<option disabled="" selected="">n Smallest</option>
+			{% for i in loop %}
+  <option value="var-{{i}}">{{i}} Smallest</option>
+{% endfor %}
+		</select>
+
+      </th>
+	   <th>Sum</th>
+      <th> 
+      	<select class="form-control">
+			<option disabled="" selected=""> Test</option>
+			<option>25</option>
+			<option>30</option>
+			<option>35</option>
+			<option>40</option>
+			<option>45</option>
+		</select>
+      </th>
+      <th>Matrix Add</th>
+	   
+      <th>Compound Interest</th>
+      <th>User Inputs</th>
+	  <th>Outputs 1</th>
+      <th>Outputs 2</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Var 1</th>
+        <td>{{firstobs.value1}}</td>
+        <td>{{lastobs.value1}}</td>
+         <td>{{maximum.value1__max}}</td>
+        <td id ="lar-1">{{largests.0.value1}}</td>
+         <td>{{minimum.value1__min}}</td>
+        <td id="small-1">{{smallests.0.value1}}</td>
+         <td>{{sum.value1__sum}}</td>
+        <td></td>
+         <td>{{matrix.0}}</td>
+        <td></td>
+         
+        <td ><input type="text" name="value1"  style="width: 75px;" /></td>
+      </tr>
+     <tr>
+      <th scope="row">Var 2</th>
+        <td>{{firstobs.value2}}</td>
+       <td>{{lastobs.value2}}</td>
+         <td>{{maximum.value2__max}}</td>
+        <td  id ="lar-2">{{largests.1.value2}}</td>
+         <td>{{minimum.value2__min}}</td>
+        <td id="small-2">{{smallests.1.value2}}</td>
+         <td>{{sum.value2__sum}}</td>
+        <td></td>
+         <td>{{matrix.1}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value2" style="width: 75px;" /></td>
+      </tr>
+      <tr>
+       <th scope="row">Var 3</th>
+         <td>{{firstobs.value3}}</td>
+       <td>{{lastobs.value3}}</td>
+         <td>{{maximum.value3__max}}</td>
+        <td   id ="lar-3" >{{largests.2.value3}}</td>
+         <td>{{minimum.value3__min}}</td>
+        <td id="small-3">{{smallests.2.value3}}</td>
+         <td>{{sum.value3__sum}}</td>
+        <td></td>
+         <td>{{matrix.2}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value3" style="width: 75px;" /></td>
+      </tr>
+       <tr>
+        <th scope="row">Var 4</th>
+         <td>{{firstobs.value4}}</td>
+        <td>{{lastobs.value4}}</td>
+         <td>{{maximum.value4__max}}</td>
+        <td  id ="lar-4">{{largests.3.value4}}</td>
+         <td>{{minimum.value4__min}}</td>
+        <td id="small-4">{{smallests.3.value4}}</td>
+         <td>{{sum.value4__sum}}</td>
+        <td></td>
+         <td>{{matrix.3}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value4" style="width: 75px;" /></td>
+      </tr>
+       <tr>
+        <th scope="row">Var 5</th>
+         <td>{{firstobs.value5}}</td>
+        <td>{{lastobs.value5}}</td>
+         <td>{{maximum.value5__max}}</td>
+        <td  id ="lar-5">{{largests.4.value5}}</td>
+         <td>{{minimum.value5__min}}</td>
+        <td id="small-5" >{{smallests.4.value5}}</td>
+         <td>{{sum.value5__sum}}</td>
+        <td></td>
+         <td>{{matrix.4}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value5" style="width: 75px;"/></td>
+      </tr>
+       <tr>
+        <th scope="row">Var 6</th>
+         <td>{{firstobs.value6}}</td>
+        <td>{{lastobs.value6}}</td>
+         <td>{{maximum.value6__max}}</td>
+        <td  id ="lar-6">{{largests.5.value6}}</td>
+         <td>{{minimum.value6__min}}</td>
+        <td id="small-6">{{smallests.5.value6}}</td>
+         <td>{{sum.value6__sum}}</td>
+        <td></td>
+         <td>{{matrix.5}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value6" style="width: 75px;" /></td>
+      </tr>
+       <tr>
+        <th scope="row">Var 7</th>
+         <td>{{firstobs.value7}}</td>
+        <td>{{lastobs.value7}}</td>
+         <td>{{maximum.value7__max}}</td>
+        <td  id ="lar-7">{{largests.6.value7}}</td>
+         <td>{{minimum.value7__min}}</td>
+        <td id="small-7">{{smallests.6.value7}}</td>
+         <td>{{sum.value7__sum}}</td>
+        <td></td>
+         <td>{{matrix.6}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value7" style="width: 75px;"/></td>
+      </tr>
+       <tr>
+        <th scope="row">Var 8</th>
+         <td>{{firstobs.value8}}</td>
+       <td>{{lastobs.value8}}</td>
+         <td>{{maximum.value8__max}}</td>
+        <td  id ="lar-8">{{largests.7.value8}}</td>
+         <td>{{minimum.value8__min}}</td>
+        <td id="small-8">{{smallests.7.value8}}</td>
+         <td>{{sum.value8__sum}}</td>
+        <td></td>
+         <td>{{matrix.7}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value8" style="width: 75px;" /></td>
+      </tr>
+       <tr>
+        <th scope="row">Var 9</th>
+         <td>{{firstobs.value9}}</td>
+        <td>{{lastobs.value9}}</td>
+         <td>{{maximum.value9__max}}</td>
+        <td  id ="lar-9">{{largests.8.value9}}</td>
+         <td>{{minimum.value9__min}}</td>
+        <td id="small-9" >{{smallests.8.value9}}</td>
+         <td>{{sum.value9__sum}}</td>
+        <td></td>
+         <td>{{matrix.8}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value9" style="width: 75px;" /></td>
+      </tr>
+       <tr>
+          <th scope="row">Var 10</th>
+         <td>{{firstobs.value10}}</td>
+        <td>{{lastobs.value10}}</td>
+         <td>{{maximum.value10__max}}</td>
+        <td  id ="lar-10">{{largests.9.value10}}</td>
+         <td>{{minimum.value10__min}}</td>
+        <td id="small-10">{{smallests.9.value10}}</td>
+         <td>{{sum.value10__sum}}</td>
+        <td></td>
+         <td>{{matrix.9}}</td>
+        <td></td>
+         
+        <td><input type="text" name="value10" style="width: 75px;" /></td>
+      </tr>
+  </tbody>
+</table>
+<div class="col-md-3" style="width:30%;padding-left:0px;padding-right:0px; padding-top: 48px;"> 
+			
+			<div id="chart_div2">
+      
+    </div>
+
+			
+		</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+{% endblock content%}
+
+
+{% block javascript %}
+
+{{block.super}}
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+$('#list').change(function() {
+    switch ($(this).val()) {
+    case "A":
+        window.location = "{% url 'introduction' 1 %}";
+        break; 
+    case "B":
+        window.location = "{% url 'introduction' 2 %}";
+        break; 
+    case "C":
+        window.location = "{% url 'introduction' 3 %}";
+        break; 
+    case "D":
+        window.location = "{% url 'introduction' 4 %}";
+        break; 
+    case "E":
+        window.location = "{% url 'introduction' 4 %}";
+        break; 
+    case "F":
+        window.location = "{% url 'introduction' 4 %}";
+        break; 
+    default: 
+        alert("Looking forward to the Weekend");
+}
+});
+
+$('#numbersmallest').change(function() {
+       str = $(this).val(); 
+        var res = str.split("-");
+        going = res[1];
+        var currentLocation = window.location;
+ 
+        variables = currentLocation['pathname'].split("/");
+
+        var id =  variables.slice(-1)[0] ;
+        if (id==""){
+           id =1 ;
+        }
+        // console.log(id)
+        // "{% url 'ajaxfire' 1 1 3 %}";
+        $.ajax({
+        url: "{% url 'ajaxfire' 1 1 3 %}",
+        data: {
+              format: 'json',
+              variable : id,
+              number : going
+              },
+        type: 'GET',
+        error: function() {
+      $('#info').html('<p>An error has occurred</p>');
+          },
+   // dataType: 'jsonp',
+   success: function(data) {
+     var obj = JSON.parse(data);
+    for (i = 0 ; i< 10; i++){
+      var put = "small-"+ (i+1).toString();
+      var values = "value" + (i+1).toString();
+      // console.log(put);
+      $('#'+put).text(obj[0]['fields'][values]);
+     // console.log(obj[0]['fields']['value1']);
+    }   }
+      });  
+    });
+
+
+
+    $('#numberlargest').change(function() {
+     str = $(this).val(); 
+        var res = str.split("-");
+        going = res[1];
+        var currentLocation = window.location;
+ 
+        variables = currentLocation['pathname'].split("/");
+
+        var id =  variables.slice(-1)[0] ;
+        if (id==""){
+           id =1 ;
+        }
+        // console.log(id)
+        // "{% url 'ajaxfire' 1 1 3 %}";
+        $.ajax({
+        url: "{% url 'ajaxfire' 1 2 3 %}",
+        data: {
+              format: 'json',
+              variable : id,
+              number : going
+              },
+        type: 'GET',
+        error: function() {
+      $('#info').html('<p>An error has occurred</p>');
+          },
+   // dataType: 'jsonp',
+   success: function(data) {
+    // console.log(JSON.stringify(data));
+    var obj = JSON.parse(data);
+    for (i = 0 ; i< 10; i++){
+      var put = "lar-"+ (i+1).toString();
+      var values = "value" + (i+1).toString();
+      // console.log(put);
+      $('#'+put).text(obj[0]['fields'][values]);
+     // console.log(obj[0]['fields']['value1']);
+    }
+   }
+   
+});
+});
+    </script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Observation');
+        data.addColumn('number', 'Value');
+        data.addRows([
+          ['Obs1', {{firstobs.value1}}],
+          ['Obs2', {{firstobs.value2}}],
+          ['Obs3', {{firstobs.value3}}],
+          ['Obs4', {{firstobs.value4}}],
+          ['Obs5', {{firstobs.value5}}],
+          ['Obs6', {{firstobs.value6}}],
+          ['Obs7', {{firstobs.value7}}],
+          ['Obs8', {{firstobs.value8}}],
+          ['Obs9', {{firstobs.value9}}],
+          ['Obs10', {{firstobs.value10}}]
+        ]);
+
+         var areadata = google.visualization.arrayToDataTable([
+          ['Value', 'Var1', 'Var2'],
+          ['Obs1',  {{firstobs.value1}},      {{lastobs.value1}}],
+          ['Obs2',  {{firstobs.value2}},      {{lastobs.value2}}],
+          ['Obs3',  {{firstobs.value3}},      {{lastobs.value3}}],
+          ['Obs4',  {{firstobs.value4}},      {{lastobs.value4}}],
+          ['Obs5', {{firstobs.value5}},      {{lastobs.value5}}],
+          ['Obs6',  {{firstobs.value6}},      {{lastobs.value6}}],
+          ['Obs7',  {{firstobs.value7}},      {{lastobs.value7}}],
+          ['Obs8',  {{firstobs.value8}},      {{lastobs.value8}}],
+          ['Obs9',  {{firstobs.value9}},      {{lastobs.value9}}],
+          ['Obs10',  {{firstobs.value10}},      {{lastobs.value10}}]
+          
+        ]);
+
+        var columndata = google.visualization.arrayToDataTable([
+        ["Element", "Value", { role: "style" } ],
+        ["Var1", {{firstobs.value1}}, "#b87333"],
+        ["Var2",  {{firstobs.value2}} , "silver"],
+        ["Var3", {{firstobs.value3}}, "gold"],
+        ["Var4", {{firstobs.value4}}, "color: #e5e4e2"],
+         ["Var5", {{firstobs.value5}}, "silver"]
+      ]);
+       var view = new google.visualization.DataView(columndata);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+
+   
+        // Set chart options
+        var piechart_options = {'title':'Value of Last Observation',
+                       'width':450,
+                       'height':350,
+                        'titleTextStyle':{color: '#F8F0EE'},
+                        'backgroundColor': '#3a3737',};
+
+        var barchart_options = {'title':'Value of First Observation',
+                       'width':450,
+                       'height':350,
+                       'titleTextStyle':{color: '#F8F0EE'},
+                        'backgroundColor': '#3a3737',};
+
+        var areachart_options = {
+          title: 'Observation With Variables',
+          hAxis: {title: 'Observations',  titleTextStyle: {color: '#F8F0EE'}},
+          width: 450,
+        height: 350,
+        'titleTextStyle':{color: '#F8F0EE'},
+        backgroundColor: '#3a3737',
+          vAxis: {minValue: 0}
+        };
+
+        var histogram_options = {
+        title: "Variables with First Observation",
+        width: 450,
+        height: 350,
+        backgroundColor: '#3a3737',
+        'titleTextStyle':{color: '#F8F0EE'},
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+
+       var steppedchart_options = {
+          title: 'The decline of \'The 39 Steps\'',
+          vAxis: {title: 'Accumulated Rating'},
+          isStacked: true
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var piechart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        piechart.draw(data, piechart_options);
+      
+        var barchart = new google.visualization.BarChart(document.getElementById('chart_div1'));
+        barchart.draw(data, barchart_options);
+
+        var areachart = new google.visualization.AreaChart(document.getElementById('chart_div2'));
+        areachart.draw(areadata, areachart_options);
+
+        var histogramchart = new google.visualization.ColumnChart(document.getElementById("chart_div3"));
+       histogramchart.draw(view, histogram_options);
+
+       var steppedchart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div4'));
+       steppedchart.draw(areadata, steppedchart_options);
+
+
+      }
+
+</script>
+
+{% endblock javascript %}
