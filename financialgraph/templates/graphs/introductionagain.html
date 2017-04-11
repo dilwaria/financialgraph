@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="{% static  'css/animate.css' %}">
    <link rel="stylesheet" href="{% static  'css/font-awesome.css' %}">
-  <script src="{% static 'js/bootstrap.js' %}"></script>
+  
  {% endblock %}
 
 
@@ -91,20 +91,19 @@
 		</select></div>
 	</div>
 	<div class="col-md-3 form-group" style="margin-bottom:5px;">
-	        <div class="col-md-5"><p style="color:#fff;float:right;">Complete</p></div>
-		<div class="col-md-7"><select class="form-control">
-			<option>20</option>
-			<option>25</option>
-			<option>30</option>
-			<option>35</option>
-			<option>40</option>
-			<option>45</option>
+	        <div class="col-md-5"><p style="color:#fff;float:right;">ChangeGraph</p></div>
+		<div class="col-md-7"><select class="form-control" id ="changegraph">
+			<option>Style-1</option>
+			<option>Style-2</option>
+			<option>Style-3</option>
+			<option>Style-4</option>	
+			<option>Style-5</option>			
 		</select></div>
 	</div>
 </div>
 
 
-<table class="table table-sm table-inverse table-striped table-bordered col-md-9 text-center" style="width:70%;padding-left:0px;padding-right:0px;">
+<table class="table table-sm table-inverse table-striped table-bordered col-md-9 text-center" style="width:65%;padding-left:0px;padding-right:0px;">
 	  
   <thead>
  
@@ -310,7 +309,7 @@
 </table>
 <div class="col-md-3" style="width:30%;padding-left:0px;padding-right:0px; padding-top: 48px;"> 
 			
-			<div id="chart_div2">
+			<div class="charts" id="chart_div1">
       
     </div>
 
@@ -330,6 +329,10 @@
 {% block javascript %}
 
 {{block.super}}
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/gloader.js' %}"></script>
+
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
@@ -439,6 +442,41 @@ $('#numbersmallest').change(function() {
    
 });
 });
+
+
+    $('#changegraph').change(function() {
+    	 var str = $(this).val(); 
+    	 
+    	 if(str=="Style-1"){
+    	 	// console.log(str);
+    	 	$('.charts').attr('id', 'chart_div1');
+    	 	google.charts.setOnLoadCallback(drawChart);
+    	 }
+    	 if(str=="Style-2"){
+    	 	console.log(str);
+    	 	$('.charts').attr('id', 'chart_div2');
+    	 	google.charts.setOnLoadCallback(drawChart);
+    	 }
+    	 
+    	 if(str=="Style-3"){
+    	 	// console.log(str);
+    	 	$('.charts').attr('id', 'chart_div3');
+    	 	 google.charts.setOnLoadCallback(drawChart);
+    	 }
+    	
+    	 if(str=="Style-4"){
+    	 	// console.log(str);
+    	 	$('.charts').attr('id', 'chart_div4');
+    	 	google.charts.setOnLoadCallback(drawChart);
+    	 }
+    	 if(str=="Style-5"){
+    	 	// console.log(str);
+    	 	$('.charts').attr('id', 'chart_div');
+    	 	google.charts.setOnLoadCallback(drawChart);
+    	 }
+
+    });
+
     </script>
     <script type="text/javascript">
 
@@ -543,21 +581,28 @@ $('#numbersmallest').change(function() {
         };
 
         // Instantiate and draw our chart, passing in some options.
+        if(document.getElementById(('chart_div'))){
         var piechart = new google.visualization.PieChart(document.getElementById('chart_div'));
         piechart.draw(data, piechart_options);
+    	}
       
+      if(document.getElementById(('chart_div1'))){
         var barchart = new google.visualization.BarChart(document.getElementById('chart_div1'));
         barchart.draw(data, barchart_options);
 
+    }
+    if(document.getElementById(('chart_div2'))){
         var areachart = new google.visualization.AreaChart(document.getElementById('chart_div2'));
         areachart.draw(areadata, areachart_options);
-
+}
+if(document.getElementById(('chart_div3'))){
         var histogramchart = new google.visualization.ColumnChart(document.getElementById("chart_div3"));
        histogramchart.draw(view, histogram_options);
-
+}
+	if(document.getElementById(('chart_div4'))){
        var steppedchart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div4'));
        steppedchart.draw(areadata, steppedchart_options);
-
+}
 
       }
 
