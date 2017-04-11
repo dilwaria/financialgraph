@@ -155,6 +155,8 @@
     </tr>
   </thead>
   <tbody>
+  <form method="POST" class="post-form">
+{% csrf_token %}
     <tr>
       <th scope="row">Var 1</th>
         <td>{{firstobs.value1}}</td>
@@ -307,6 +309,8 @@
       </tr>
   </tbody>
 </table>
+<input type="submit" value="Submit" id="yelo">
+  </form>
 <div class="col-md-3" style="width:30%;padding-left:0px;padding-right:0px; padding-top: 48px;"> 
 			
 			<div class="charts" id="chart_div1">

@@ -69,8 +69,8 @@ def introduction(request,variable_id=1):
 
 
 	# print smallests
-	for i in smallests:
-		print i.value1,i.value2,i.value3,i.value4,i.value5,i.value6,i.value7,i.value8,i.value9,i.value10
+	# for i in smallests:
+	# 	print i.value1,i.value2,i.value3,i.value4,i.value5,i.value6,i.value7,i.value8,i.value9,i.value10
 
 
 	# for i in range(0,10):
@@ -109,6 +109,7 @@ def introduction(request,variable_id=1):
 
 		if form.is_valid():
 			post = form.save()
+			
 			post.save()
 			return redirect('introduction',variable_id)	
 
